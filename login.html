@@ -4,22 +4,35 @@
     <meta charset="utf-8">
     <title>Login</title>
     <link rel="stylesheet" type="text/css" href="css/style.css">
+    <script type="text/javascript">
+      window.onload=function(){
+        document.getElementById('login').style.display = 'block';
+        document.getElementById('signup').style.display = 'none';
+      }
+      function loginSignUp(){
+        if(document.getElementById('loginCheck').checked){
+          document.getElementById('login').style.display = 'block';
+          document.getElementById('signup').style.display = 'none';
+        }else{
+          document.getElementById('login').style.display = 'none';
+          document.getElementById('signup').style.display = 'block';
+        }
+      }
+    </script>
+    <script type="text/javascript">
+      $(document).ready(function(){
+        
+      });
+    </script>
   </head>
   <body>
     <h2 align="center">Log in to your account</h2>
     <center>
-      <table>
-        <tr>
-          <td>
-            <button name="login" onclick="login()">Login</button>
-          </td>
-          <td>
-            <button name="signup" onclick="signup()">Sign up</button>
-          </td>
-        </tr>
-      </table>
+      <input type="radio" onclick="javascript:loginSignUp();" name="yesno" id="loginCheck"/>Login
+      <input type="radio" onclick="javascript:loginSignUp();" name="yesno" id="signupCheck"/>SignUp
     </center>
-    <div id="login" align="center">
+    <br>
+    <div id="login" align="center" >
       <table>
         <tr>
           <td>
@@ -41,7 +54,7 @@
       <br />
       <button name="submit" onclick="submit()">Submit</button>
     </div>
-    <!--div id="signup" align="center">
+    <div id="signup" align="center" style="display:none">
       <table>
         <tr>
           <td>
@@ -59,9 +72,17 @@
             <input type="password" placeholder="Password"></input>
           </td>
         </tr>
+        <tr>
+          <td>
+            <p>Retype Password</p>
+          </td>
+          <td>
+            <input type="password" placeholder="Password"></input>
+          </td>
+        </tr>
       </table>
       <br />
       <button name="submit" onclick="submit()">Submit</button>
-    </div-->
+    </div>
   </body>
 </html>
