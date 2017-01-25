@@ -18,17 +18,19 @@
           document.getElementById('signup').style.display = 'block';
         }
       }
-    </script>
-    <script type="text/javascript">
-      $(document).ready(function(){
-        
-      });
+      function submit(){
+        if(document.getElementById('loginCheck').checked){
+
+        }else{
+
+        }
+      }
     </script>
   </head>
   <body>
     <h2 align="center">Log in to your account</h2>
     <center>
-      <input type="radio" onclick="javascript:loginSignUp();" name="yesno" id="loginCheck"/>Login
+      <input type="radio" onclick="javascript:loginSignUp();" name="yesno" id="loginCheck" checked="true" />Login
       <input type="radio" onclick="javascript:loginSignUp();" name="yesno" id="signupCheck"/>SignUp
     </center>
     <br>
@@ -36,18 +38,18 @@
       <table>
         <tr>
           <td>
-            <p>Name</p>
+            <p id="feild">Name</p>
           </td>
           <td>
-            <input type="text" placeholder="Username"></input>
+            <input type="text" placeholder="Username" id="inputbox"></input>
           </td>
         </tr>
         <tr>
           <td>
-            <p>Password</p>
+            <p id="feild">Password</p>
           </td>
           <td>
-            <input type="password" placeholder="Password"></input>
+            <input type="password" placeholder="Password" id="inputbox"></input>
           </td>
         </tr>
       </table>
@@ -58,26 +60,34 @@
       <table>
         <tr>
           <td>
-            <p>Name</p>
+            <p id="feild">Name</p>
           </td>
           <td>
-            <input type="text" placeholder="Username"></input>
-          </td>
-        </tr>
-        <tr>
-          <td>
-            <p>Password</p>
-          </td>
-          <td>
-            <input type="password" placeholder="Password"></input>
+            <input type="text" placeholder="Username" id="inputbox"></input>
           </td>
         </tr>
         <tr>
           <td>
-            <p>Retype Password</p>
+            <p id="feild">Roll No</p>
           </td>
           <td>
-            <input type="password" placeholder="Password"></input>
+            <input type="text" placeholder="14/IT/xy" id="inputbox"></input>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <p id="feild">Password</p>
+          </td>
+          <td>
+            <input type="password" placeholder="Password" id="inputbox"></input>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <p id="feild">Retype Password</p>
+          </td>
+          <td>
+            <input type="password" placeholder="Password" id="inputbox"></input>
           </td>
         </tr>
       </table>

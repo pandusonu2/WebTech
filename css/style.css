@@ -2,12 +2,20 @@ table {
   border: 2px solid black;
   border-width: medium;
   text-align: center;
-  padding: 5px;
+  padding-left: 50px;
+  padding-right: 50px;
 }
 body {
-  background-color: #7575e2;
+	background-image: url("../images/background.jpg");
 }
 p {
   padding-left: 5px;
   padding-right: 5px;
+}
+#feild{
+	font-size: 30px;
+	background-color: rgb(56,113,65);
+}
+#inputbox{
+	font-size: 23px;
 }
