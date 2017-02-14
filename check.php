@@ -1,5 +1,9 @@
 <?php
-	$user=$POST['user'];
+	header('Content-Type: application/x-httpd-php')
+	/*session_start();
+	header('Content-Type: application/x-httpd-php php');
+	echo $_POST['key'];
+	/*$user=$POST['user'];
 	$pass=$POST['pass'];
 	$type=1;//_GET['type']
 	mysqli=new mysqli("localhost","root","pass","users");
@@ -18,5 +22,5 @@
 		if($re=$mysqli->query($query)){
 	        echo "Signed Up";//header('Location: ../student.html');
 		}
-	}
+	}*/
 ?>
