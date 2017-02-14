@@ -4,95 +4,130 @@
     <meta charset="utf-8">
     <title>Login</title>
     <link rel="stylesheet" type="text/css" href="css/style.css">
-    <script type="text/javascript">
-      window.onload=function(){
-        document.getElementById('login').style.display = 'block';
-        document.getElementById('signup').style.display = 'none';
-      }
-      function loginSignUp(){
-        if(document.getElementById('loginCheck').checked){
-          document.getElementById('login').style.display = 'block';
-          document.getElementById('signup').style.display = 'none';
-        }else{
-          document.getElementById('login').style.display = 'none';
-          document.getElementById('signup').style.display = 'block';
-        }
-      }
-      function submit(){
-        if(document.getElementById('loginCheck').checked){
-
-        }else{
-
-        }
-      }
-    </script>
+    <script src="js/main.js"></script>
   </head>
   <body>
-    <h2 align="center">Log in to your account</h2>
+  <table id="logo_and_heading">
+  <tr>
+  <td> <a href="index.html"> <img src="images/nitlogo.png" id="nitlogo"> </a></td>
+  <td>
+  <table id="napbar" style="border-spacing: 2px; background:rgb(231,233,232);">
+    <tr>
+      <td><a href="index.html"><input type="button" value="HOME"/></a></td>
+      <td><input type="button" onclick="javascript:studentT();" value="Student"/></td>
+      <td><input type="button" onclick="javascript:studentT();" value="Teacher"/></td>
+    </tr>
+  </table>
+  </td>
+  </tr>
+  </table>
+  <div id="student">
+    <h2 align="center">Log in to your account (Student)</h2>
     <center>
       <input type="radio" onclick="javascript:loginSignUp();" name="yesno" id="loginCheck" checked="true" />Login
       <input type="radio" onclick="javascript:loginSignUp();" name="yesno" id="signupCheck"/>SignUp
     </center>
     <br>
     <div id="login" align="center" >
-      <table>
-        <tr>
-          <td>
-            <p id="feild">Name</p>
-          </td>
-          <td>
-            <input type="text" placeholder="Username" id="inputbox"></input>
-          </td>
-        </tr>
-        <tr>
-          <td>
-            <p id="feild">Password</p>
-          </td>
-          <td>
-            <input type="password" placeholder="Password" id="inputbox"></input>
-          </td>
-        </tr>
-      </table>
-      <br />
-      <button name="submit" onclick="submit()">Submit</button>
+      <form action="check.php" method="POST">
+        <p>
+          <label>Username:</label>
+          <input type="text" name="user" id="inputbox"/>
+        </p>
+        <p>
+          <label>Password:</label>
+          <input type="password" name="pass" id="inputbox"/>
+        </p>
+        <p>
+          <input type="submit" id="btn" value="LogIn" />
+        </p>
+      </form>
     </div>
-    <div id="signup" align="center" style="display:none">
-      <table>
-        <tr>
-          <td>
-            <p id="feild">Name</p>
-          </td>
-          <td>
-            <input type="text" placeholder="Username" id="inputbox"></input>
-          </td>
-        </tr>
-        <tr>
-          <td>
-            <p id="feild">Roll No</p>
-          </td>
-          <td>
-            <input type="text" placeholder="14/IT/xy" id="inputbox"></input>
-          </td>
-        </tr>
-        <tr>
-          <td>
-            <p id="feild">Password</p>
-          </td>
-          <td>
-            <input type="password" placeholder="Password" id="inputbox"></input>
-          </td>
-        </tr>
-        <tr>
-          <td>
-            <p id="feild">Retype Password</p>
-          </td>
-          <td>
-            <input type="password" placeholder="Password" id="inputbox"></input>
-          </td>
-        </tr>
-      </table>
-      <br />
-      <button name="submit" onclick="submit()">Submit</button>
+    <div id="signup" align="center">
+      <form action="check.php" method="POST">
+        <p>
+          <label>Username(email):</label>
+          <input type="text" name="user" id="inputbox"/>
+        </p>
+        <p>
+          <label>First Name:</label>
+          <input type="text" name="user" id="inputbox"/>
+        </p>
+        <p>
+          <label>Last Name:</label>
+          <input type="text" name="user" id="inputbox"/>
+        </p>
+        <p>
+          <label>Roll No:</label>
+          <input type="text" name="user" id="inputbox"/>
+        </p>
+        <p>
+          <label>Password:</label>
+          <input type="password" name="pass" id="inputbox"/>
+        </p>
+        <p>
+          <label>Re Password:</label>
+          <input type="password" name="pass" id="inputbox"/>
+        </p>
+        <p>
+          <input type="submit" id="btn" value="LogIn" />
+        </p>
+      </form>
     </div>
+  </div>  
+  <div id="teacher" style="display: none">
+    <h2 align="center">Welcome Teacher! Log in to your account (Teacher)</h2>
+    <center>
+      <input type="radio" onclick="javascript:loginSignUp2();" name="yesno" id="loginCheck2" checked="true" />Login
+      <input type="radio" onclick="javascript:loginSignUp2();" name="yesno" id="signupCheck2"/>SignUp
+    </center>
+    <br>
+    <div id="login2" align="center" >
+      <form action="check.php" method="POST">
+        <p>
+          <label>Username:</label>
+          <input type="text" name="user" id="inputbox"/>
+        </p>
+        <p>
+          <label>Password:</label>
+          <input type="password" name="pass" id="inputbox"/>
+        </p>
+        <p>
+          <input type="submit" id="btn" value="LogIn" />
+        </p>
+      </form>
+    </div>
+    <div id="signup2" align="center" style="display: none">
+      <form action="check.php" method="POST">
+        <p>
+          <label>Username(email):</label>
+          <input type="text" name="user" id="inputbox"/>
+        </p>
+        <p>
+          <label>First Name:</label>
+          <input type="text" name="user" id="inputbox"/>
+        </p>
+        <p>
+          <label>Last Name:</label>
+          <input type="text" name="user" id="inputbox"/>
+        </p>
+        <p>
+          <label>Roll No:</label>
+          <input type="text" name="user" id="inputbox"/>
+        </p>
+        <p>
+          <label>Password:</label>
+          <input type="password" name="pass" id="inputbox"/>
+        </p>
+        <p>
+          <label>Re Password:</label>
+          <input type="password" name="pass" id="inputbox"/>
+        </p>
+        <p>
+          <input type="submit" id="btn" value="LogIn" />
+        </p>
+      </form>
+    </div>
+  </div>
   </body>
 </html>

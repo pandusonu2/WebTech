@@ -1,12 +1,40 @@
 table {
-  border: 2px solid black;
-  border-width: medium;
-  text-align: center;
-  padding-left: 50px;
-  padding-right: 50px;
+  	border: 2px solid #369c24;
+    border-width: thick;
+    text-align: center;
+    padding-left: 50px;
+    padding-right: 50px;
+    width: 500px;
+    height: 80px;
 }
 body {
-	background-image: url("../images/background.jpg");
+	background-image: url("../images/bg_image.jpg");
+	background-size: 100%;
+	background-repeat: no-repeat;
+}
+#logo_and_heading{
+	border: none;
+    width: 1300px;
+    height: 50px;
+}
+#index_h1{
+	font-size: 50px;
+}
+#index_h2{
+	font-size: 40px;
+}
+#index_h3{
+	font-size: 25px;
+}
+#index_hr{
+	height: 2px;
+    color: rgb(56,113,65);
+    background: #369c24;
+}
+
+#nitlogo{
+	width: 200px;
+	height: 200px;
 }
 p {
   padding-left: 5px;
@@ -18,4 +46,8 @@ p {
 }
 #inputbox{
 	font-size: 23px;
+}
+#napbar{
+	border:none;
+	
 }
