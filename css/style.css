@@ -12,6 +12,13 @@ body {
 	background-size: 100%;
 	background-repeat: no-repeat;
 }
+.boxx{
+	border: 5px solid black;
+	border-width: thick;
+	margin-left: 400px;
+	margin-right: 400px;
+	background-color: rgb(200,200,200);
+}
 #logo_and_heading{
 	border: none;
     width: 1300px;
