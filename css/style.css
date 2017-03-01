@@ -9,7 +9,7 @@ table {
 }
 body {
 	background-image: url("../images/bg_image.jpg");
-	background-size: 100%;
+	background-size: cover;
 	background-repeat: no-repeat;
 }
 .boxx{
@@ -51,7 +51,7 @@ p {
 	font-size: 30px;
 	background-color: rgb(56,113,65);
 }
-#inputbox{
+.inputbox{
 	font-size: 23px;
 }
 #napbar{

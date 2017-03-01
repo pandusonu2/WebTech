@@ -9,16 +9,21 @@
   <body>
   <table id="logo_and_heading">
   <tr>
-  <td> <a href="index.html"> <img src="images/nitlogo.png" id="nitlogo"> </a></td>
-  <td>
-  <table id="napbar" style="border-spacing: 2px; background:rgb(231,233,232);">
-    <tr>
-      <td><a href="index.html"><input type="button" value="HOME"/></a></td>
-      <td><input type="button" onclick="javascript:studentT();" value="Student"/></td>
-      <td><input type="button" onclick="javascript:studentT();" value="Teacher"/></td>
-    </tr>
-  </table>
-  </td>
+    <td> 
+      <a href="index.html"> <img src="images/nitlogo.png" id="nitlogo"> </a>
+    </td>
+    <td>
+      <table id="napbar" style="border-spacing: 2px; background:rgb(231,233,232);">
+        <tr>
+          <h1 align="left">Registration Portal</h1>
+        </tr>
+        <tr>
+          <td><a href="index.html"><input type="button" value="HOME"/></a></td>
+          <td><input type="button" onclick="javascript:studentT();" value="Student"/></td>
+          <td><input type="button" onclick="javascript:studentT();" value="Teacher"/></td>
+        </tr>
+      </table>
+    </td>
   </tr>
   </table>
   <div id="student" class="boxx">
@@ -30,22 +35,31 @@
     <br>
     <div id="login" align="center" >
       <form action="check.php" method="POST">
-          <input type="text" name="user" id="inputbox" placeholder="Username" /><br/><br/>
-          <input type="password" name="pass" id="inputbox" placeholder="Password" /><br/><br/>
+          <input class="inputbox" type="text" name="user" id="unameL" required="" placeholder="Username" /><br/><br/>
+          <input class="inputbox" type="password" name="pass" id="passL" required="" placeholder="Password" /><br/><br/>
           <input type="text" name="key" value="sl" style="display: none" />
           <input type="submit" id="btn" value="LogIn" />
       </form>
     </div>
     <div id="signup" align="center">
-      <form action="check.php" method="POST">
-          <input type="text" name="user" id="inputbox" placeholder="Username(email)" /><br/><br/>
-          <input type="text" name="fname" id="inputbox" placeholder="First Name" /><br/><br/>
-          <input type="text" name="lname" id="inputbox" placeholder="Last Name" /><br/><br/>
-          <input type="text" name="roll" id="inputbox" placeholder="Roll No" /><br/><br/>
-          <input type="password" name="pass" id="inputbox" placeholder="Password" /><br/><br/>
-          <input type="password" name="rpass" id="inputbox" placeholder="Re-enter password" /><br/><br/>
+      <form action="check.php" method="POST" onsubmit="return validate(this)">
+          <input class="inputbox" type="text" name="user" id="uname" value=""  placeholder="Username"><br/><span id="unameError" style="color:red; display:none">Error Here</span><br/>
+          <input class="inputbox" type="text" name="fname" id="fname" value="" placeholder="First Name"><br/><span id="fnameError" style="color:red; display:none">Error Here</span><br/>
+          <input class="inputbox" type="text" name="lname" id="lname" value="" placeholder="Last Name"><br/><span id="lnameError" style="color:red; display:none">Error Here</span><br/>
+          <input type="radio" name="gender" id="gender" value="Male" required="">Male&nbsp;
+          <input type="radio" name="gender" id="gender" value="Female" required="">Female<br/><br/>
+          <label>Date of Birth: </label>
+            <select name="day" id="day" required=""></select>&nbsp;
+            <select name="month" id="month" required=""></select>&nbsp;
+            <select name="year" id="year" required=""></select><br/><br/>
+          <input class="inputbox" type="text" name="roll" id="roll" value="" placeholder="Roll No"><br/><span id="rollError" style="color:red; display:none">Error Here</span><br/>
+          <input class="inputbox" type="text" name="email" id="email" value="" placeholder="Email"><br/><span id="emailError" style="color:red; display:none">Error Here</span><br/>
+          <input class="inputbox" type="text" name="phone" id="phone" value="" placeholder="Phone"><br/><span id="phoneError" style="color:red; display:none">Error Here</span><br/>
+          <input class="inputbox" type="password" name="pass" id="pass" placeholder="Password" /><span id="passError" style="color:red; display:none">Error Here</span><br/><br/>
+          <input class="inputbox" type="password" name="rpass" id="repass" placeholder="Re-enter password" /><br/><span id="repassError" style="color:red; display:none">Error Here</span><br/>
+          <textarea class="inputbox" name="address" id="address" value="" required="" placeholder="Address"></textarea><br/><span id="addressError" style="color:red; display:none">Error Here</span><br/>
           <input type="text" name="key" value="ss" style="display: none" />
-          <input type="submit" id="btn" value="LogIn" />
+          <input type="submit" id="btn" value="SignUp" />
       </form>
     </div>
   </div>  
@@ -65,14 +79,23 @@
       </form>
     </div>
     <div id="signup2" align="center" style="display: none">
-      <form action="check.php" method="POST">
-          <input type="text" name="user" id="inputbox" placeholder="Username" /><br/><br/>
-          <input type="text" name="fname" id="inputbox" placeholder="First Name" /><br/><br/>
-          <input type="text" name="lname" id="inputbox" placeholder="Last Name" /><br/><br/>
-          <input type="password" name="pass" id="inputbox" placeholder="Password" /><br/><br/>
-          <input type="password" name="rpass" id="inputbox" placeholder="Re-enter password" /><br/><br/>
+      <form action="check.php" method="POST" onsubmit="return validate(this)">
+          <input class="inputbox" type="text" name="user" id="uname" value=""  placeholder="Username"><br/><span id="unameError" style="color:red; display:none">Error Here</span><br/>
+          <input class="inputbox" type="text" name="fname" id="fname" value="" placeholder="First Name"><br/><span id="fnameError" style="color:red; display:none">Error Here</span><br/>
+          <input class="inputbox" type="text" name="lname" id="lname" value="" placeholder="Last Name"><br/><span id="lnameError" style="color:red; display:none">Error Here</span><br/>
+          <input type="radio" name="gender" id="gender" value="Male" required="">Male&nbsp;
+          <input type="radio" name="gender" id="gender" value="Female" required="">Female<br/><br/>
+          <label>Date of Birth: </label>
+            <select name="day" id="day" required=""></select>&nbsp;
+            <select name="month" id="month" required=""></select>&nbsp;
+            <select name="year" id="year" required=""></select><br/><br/>
+          <input class="inputbox" type="text" name="email" id="email" value="" placeholder="Email"><br/><span id="emailError" style="color:red; display:none">Error Here</span><br/>
+          <input class="inputbox" type="text" name="phone" id="phone" value="" placeholder="Phone"><br/><span id="phoneError" style="color:red; display:none">Error Here</span><br/>
+          <input class="inputbox" type="password" name="pass" id="pass" placeholder="Password" /><span id="passError" style="color:red; display:none">Error Here</span><br/><br/>
+          <input class="inputbox" type="password" name="rpass" id="repass" placeholder="Re-enter password" /><br/><span id="repassError" style="color:red; display:none">Error Here</span><br/>
+          <textarea class="inputbox" name="address" id="address" value="" required="" placeholder="Address"></textarea><br/><span id="addressError" style="color:red; display:none">Error Here</span><br/>
           <input type="text" name="key" value="ts" style="display: none" />
-          <input type="submit" id="btn" value="LogIn" />
+          <input type="submit" id="btn" value="SignUp" />
       </form>
     </div>
   </div>
