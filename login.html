@@ -43,21 +43,30 @@
     </div>
     <div id="signup" align="center">
       <form action="check.php" method="POST" onsubmit="return validate(this)">
-          <input class="inputbox" type="text" name="user" id="uname" value=""  placeholder="Username"><br/><span id="unameError" style="color:red; display:none">Error Here</span><br/>
-          <input class="inputbox" type="text" name="fname" id="fname" value="" placeholder="First Name"><br/><span id="fnameError" style="color:red; display:none">Error Here</span><br/>
-          <input class="inputbox" type="text" name="lname" id="lname" value="" placeholder="Last Name"><br/><span id="lnameError" style="color:red; display:none">Error Here</span><br/>
+          <input class="inputbox" type="text" name="user" id="uname" value=""  placeholder="Username"><br/>
+          <span id="unameError" style="color:red; display:none">This should have only alphabets</span><br/>
+          <input class="inputbox" type="text" name="fname" id="fname" value="" placeholder="First Name"><br/>
+          <span id="fnameError" style="color:red; display:none">This should have only alphabets</span><br/>
+          <input class="inputbox" type="text" name="lname" id="lname" value="" placeholder="Last Name"><br/>
+          <span id="lnameError" style="color:red; display:none">This should have only alphabets</span><br/>
           <input type="radio" name="gender" id="gender" value="Male" required="">Male&nbsp;
           <input type="radio" name="gender" id="gender" value="Female" required="">Female<br/><br/>
           <label>Date of Birth: </label>
             <select name="day" id="day" required=""></select>&nbsp;
             <select name="month" id="month" required=""></select>&nbsp;
             <select name="year" id="year" required=""></select><br/><br/>
-          <input class="inputbox" type="text" name="roll" id="roll" value="" placeholder="Roll No"><br/><span id="rollError" style="color:red; display:none">Error Here</span><br/>
-          <input class="inputbox" type="text" name="email" id="email" value="" placeholder="Email"><br/><span id="emailError" style="color:red; display:none">Error Here</span><br/>
-          <input class="inputbox" type="text" name="phone" id="phone" value="" placeholder="Phone"><br/><span id="phoneError" style="color:red; display:none">Error Here</span><br/>
-          <input class="inputbox" type="password" name="pass" id="pass" placeholder="Password" /><span id="passError" style="color:red; display:none">Error Here</span><br/><br/>
-          <input class="inputbox" type="password" name="rpass" id="repass" placeholder="Re-enter password" /><br/><span id="repassError" style="color:red; display:none">Error Here</span><br/>
-          <textarea class="inputbox" name="address" id="address" value="" required="" placeholder="Address"></textarea><br/><span id="addressError" style="color:red; display:none">Error Here</span><br/>
+          <input class="inputbox" type="text" name="roll" id="roll" value="" placeholder="Roll No"><br/>
+          <span id="rollError" style="color:red; display:none">This should be two digit number</span><br/>
+          <input class="inputbox" type="text" name="email" id="email" value="" placeholder="Email"><br/>
+          <span id="emailError" style="color:red; display:none">This should be of the format xyz@email.com</span><br/>
+          <input class="inputbox" type="text" name="phone" id="phone" value="" placeholder="Phone"><br/>
+          <span id="phoneError" style="color:red; display:none">This should be nine digit number</span><br/>
+          <input class="inputbox" type="password" name="pass" id="pass" placeholder="Password" />
+          <span id="passError" style="color:red; display:none">Error Here</span><br/><br/>
+          <input class="inputbox" type="password" name="rpass" id="repass" placeholder="Re-enter password" /><br/>
+          <span id="repassError" style="color:red; display:none">Error Here</span><br/>
+          <textarea class="inputbox" name="address" id="address" value="" required="" placeholder="Address"></textarea><br/>
+          <span id="addressError" style="color:red; display:none">This should not be blank</span><br/>
           <input type="text" name="key" value="ss" style="display: none" />
           <input type="submit" id="btn" value="SignUp" />
       </form>
@@ -72,28 +81,36 @@
     <br>
     <div id="login2" align="center" >
       <form action="check.php" method="POST">
-          <input type="text" name="user" id="inputbox" placeholder="Username" /><br/><br/>
-          <input type="password" name="pass" id="inputbox" placeholder="Password" /><br/><br/>
+          <input class="inpurbox" type="text" name="user" id="inputbox" placeholder="Username" /><br/><br/>
+          <input class="inputbox" type="password" name="pass" id="inputbox" placeholder="Password" /><br/><br/>
           <input type="text" name="key" value="tl" style="display: none" />
           <input type="submit" id="btn" value="LogIn" />
       </form>
     </div>
     <div id="signup2" align="center" style="display: none">
       <form action="check.php" method="POST" onsubmit="return validate(this)">
-          <input class="inputbox" type="text" name="user" id="uname" value=""  placeholder="Username"><br/><span id="unameError" style="color:red; display:none">Error Here</span><br/>
-          <input class="inputbox" type="text" name="fname" id="fname" value="" placeholder="First Name"><br/><span id="fnameError" style="color:red; display:none">Error Here</span><br/>
-          <input class="inputbox" type="text" name="lname" id="lname" value="" placeholder="Last Name"><br/><span id="lnameError" style="color:red; display:none">Error Here</span><br/>
+          <input class="inputbox" type="text" name="user" id="uname2" value=""  placeholder="Username"><br/>
+          <span id="uname2Error" style="color:red; display:none">This should have only alphabets</span><br/>
+          <input class="inputbox" type="text" name="fname" id="fname2" value="" placeholder="First Name"><br/>
+          <span id="fname2Error" style="color:red; display:none">This should have only alphabets</span><br/>
+          <input class="inputbox" type="text" name="lname" id="lname2" value="" placeholder="Last Name"><br/>
+          <span id="lname2Error" style="color:red; display:none">This should have only alphabets</span><br/>
           <input type="radio" name="gender" id="gender" value="Male" required="">Male&nbsp;
           <input type="radio" name="gender" id="gender" value="Female" required="">Female<br/><br/>
           <label>Date of Birth: </label>
-            <select name="day" id="day" required=""></select>&nbsp;
-            <select name="month" id="month" required=""></select>&nbsp;
-            <select name="year" id="year" required=""></select><br/><br/>
-          <input class="inputbox" type="text" name="email" id="email" value="" placeholder="Email"><br/><span id="emailError" style="color:red; display:none">Error Here</span><br/>
-          <input class="inputbox" type="text" name="phone" id="phone" value="" placeholder="Phone"><br/><span id="phoneError" style="color:red; display:none">Error Here</span><br/>
-          <input class="inputbox" type="password" name="pass" id="pass" placeholder="Password" /><span id="passError" style="color:red; display:none">Error Here</span><br/><br/>
-          <input class="inputbox" type="password" name="rpass" id="repass" placeholder="Re-enter password" /><br/><span id="repassError" style="color:red; display:none">Error Here</span><br/>
-          <textarea class="inputbox" name="address" id="address" value="" required="" placeholder="Address"></textarea><br/><span id="addressError" style="color:red; display:none">Error Here</span><br/>
+            <select name="day" id="day2" required=""></select>&nbsp;
+            <select name="month" id="month2" required=""></select>&nbsp;
+            <select name="year" id="year2" required=""></select><br/><br/>
+          <input class="inputbox" type="text" name="email" id="email2" value="" placeholder="Email"><br/>
+          <span id="email2Error" style="color:red; display:none">This should be of the format xyz@email.com</span><br/>
+          <input class="inputbox" type="text" name="phone" id="phone2" value="" placeholder="Phone"><br/>
+          <span id="phone2Error" style="color:red; display:none">This should be nine digit number</span><br/>
+          <input class="inputbox" type="password" name="pass" id="pass2" placeholder="Password" />
+          <span id="pass2Error" style="color:red; display:none">Error Here</span><br/><br/>
+          <input class="inputbox" type="password" name="rpass" id="repass2" placeholder="Re-enter password" /><br/>
+          <span id="repass2Error" style="color:red; display:none">Error Here</span><br/>
+          <textarea class="inputbox" name="address" id="address2" value="" required="" placeholder="Address"></textarea><br/>
+          <span id="address2Error" style="color:red; display:none">This should not be blank</span><br/>
           <input type="text" name="key" value="ts" style="display: none" />
           <input type="submit" id="btn" value="SignUp" />
       </form>

@@ -28,7 +28,7 @@
 					$mysqli=new mysqli("localhost","root","pass","users");
 					$type=$_POST['key'];
 					if($type=="sl"){
-						$query="SELECT * FROM db where tors=0";
+						$query="SELECT * FROM db where tors=0 and valid=1";
 						if($re=$mysqli->query($query)){
 							while($row=$re->fetch_row()){
 								if($row[0]==$_POST['user'] && $row[1]==$_POST['pass']){
@@ -48,7 +48,7 @@
 						$fname=$_POST['fname'];
 						$lname=$_POST['lname'];
 						$roll=$_POST['roll'];
-						$query="INSERT INTO `db` (`user`, `pass`, `fname`, `lname`, `roll`, `tors`) VALUES ('$user', '$pass', '$fname', '$lname', '$roll', '0');";
+						$query="INSERT INTO `db` (`user`, `pass`, `fname`, `lname`, `roll`, `tors`, `valid`) VALUES ('$user', '$pass', '$fname', '$lname', '$roll', '0', '0');";
 						if($re=$mysqli->query($query))
 							echo "Success";
 						else echo "Error";
@@ -72,7 +72,7 @@
 						}
 						$fname=$_POST['fname'];
 						$lname=$_POST['lname'];
-						$query="INSERT INTO `db` (`user`, `pass`, `fname`, `lname`, `tors`) VALUES ('$user', '$pass', '$fname', '$lname', '1');";
+						$query="INSERT INTO `db` (`user`, `pass`, `fname`, `lname`, `tors`, `valid`) VALUES ('$user', '$pass', '$fname', '$lname', '1', '1');";
 						if($re=$mysqli->query($query))
 							echo "Success";
 						else echo "Error";
