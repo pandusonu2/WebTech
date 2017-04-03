@@ -32,63 +32,96 @@ function studentT() {
   }
 }
 function setValues(){
-  var days=['Jan','Feb','March','April','May','June','July','Aug','Sept','Oct','Nov','Dec'];
-  var select=document.getElementById('month');
-  for(var i=0; i<12; i++){
-    var opt=document.createElement('option');
-    opt.value=days[i];
-    opt.innerHTML=days[i];
-    try{
-      select.appendChild(opt);
-    }catch(err){}
+  var depts=['IT','CS','ECE','BT','ME','CE','MME'];
+  var select = document.getElementById('dept');
+  var select2 = document.getElementById('dept2');
+  for(var i = 0; i<depts.length;i++){
+    var opt = document.createElement('option');
+    opt.value=depts[i];
+    opt.innerHTML=depts[i];
+    select.appendChild(opt);
   }
-  select=document.getElementById('day');
-  for(var i=1; i<=31; i++){
-    var opt=document.createElement('option');
-    opt.value=i;
-    opt.innerHTML=i;
-    try{
-      select.appendChild(opt);
-    }catch(err){}
+  for(var i = 0; i<depts.length;i++){
+    var opt = document.createElement('option');
+    opt.value=depts[i];
+    opt.innerHTML=depts[i];
+    select2.appendChild(opt);
   }
-  select=document.getElementById('year');
-  for(var i=2015; i>=1960; i--){
-    var opt=document.createElement('option');
-    opt.value=i;
-    opt.innerHTML=i;
-    try{
-      select.appendChild(opt);
-    }catch(err){}
+  var lvl=['10th class','12th class','B Tech','M Tech','PhD'];
+  var select3 = document.getElementById('lvlEdu');
+  var select4 = document.getElementById('lvlEdu2');
+  for(var i = 0; i<lvl.length-1;i++){
+    var opt = document.createElement('option');
+    opt.value=lvl[i];
+    opt.innerHTML=lvl[i];
+    select3.appendChild(opt);
   }
+  select3.value='M Tech';
+  for(var i = 0; i<lvl.length;i++){
+    var opt = document.createElement('option');
+    opt.value=lvl[i];
+    opt.innerHTML=lvl[i];
+    select4.appendChild(opt);
+  }
+  select4.value='PhD';
 }
-function setValues2(){
-  var days=['Jan','Feb','March','April','May','June','July','Aug','Sept','Oct','Nov','Dec'];
-  var select=document.getElementById('month2');
-  for(var i=0; i<12; i++){
-    var opt=document.createElement('option');
-    opt.value=days[i];
-    opt.innerHTML=days[i];
-    try{
-      select.appendChild(opt);
-    }catch(err){}
-  }
-  select=document.getElementById('day2');
-  for(var i=1; i<=31; i++){
-    var opt=document.createElement('option');
-    opt.value=i;
-    opt.innerHTML=i;
-    try{
-      select.appendChild(opt);
-    }catch(err){}
-  }
-  select=document.getElementById('year2');
-  for(var i=2015; i>=1960; i--){
-    var opt=document.createElement('option');
-    opt.value=i;
-    opt.innerHTML=i;
-    try{
-      select.appendChild(opt);
-    }catch(err){}
+function displayer(val){
+  if(val==1){
+    var current = document.getElementById('lvlEdu').value;
+    if(current == "10th class"){
+      document.getElementById('ten').style.display = 'block';
+     document.getElementById('twelve').style.display = 'none';
+      document.getElementById('btech').style.display = 'none';
+      document.getElementById('mtech').style.display = 'none'; 
+    }else if(current == "12th class"){
+      document.getElementById('ten').style.display = 'block';
+     document.getElementById('twelve').style.display = 'block';
+      document.getElementById('btech').style.display = 'none';
+      document.getElementById('mtech').style.display = 'none';
+    }else if(current == "B Tech"){
+      document.getElementById('ten').style.display = 'block';
+     document.getElementById('twelve').style.display = 'block';
+      document.getElementById('btech').style.display = 'block';
+      document.getElementById('mtech').style.display = 'none';
+    }else if(current == "M Tech"){
+      document.getElementById('ten').style.display = 'block';
+     document.getElementById('twelve').style.display = 'block';
+      document.getElementById('btech').style.display = 'block';
+      document.getElementById('mtech').style.display = 'block';
+    }
+  }else{
+    var current = document.getElementById('lvlEdu2').value;
+    if(current == "10th class"){
+      document.getElementById('ten2').style.display = 'block';
+     document.getElementById('twelve2').style.display = 'none';
+      document.getElementById('btech2').style.display = 'none';
+      document.getElementById('mtech2').style.display = 'none'; 
+      document.getElementById('phd2').style.display = 'none'; 
+    }else if(current == "12th class"){
+      document.getElementById('ten2').style.display = 'block';
+     document.getElementById('twelve2').style.display = 'block';
+      document.getElementById('btech2').style.display = 'none';
+      document.getElementById('mtech2').style.display = 'none';
+      document.getElementById('phd2').style.display = 'none'; 
+    }else if(current == "B Tech"){
+      document.getElementById('ten2').style.display = 'block';
+     document.getElementById('twelve2').style.display = 'block';
+      document.getElementById('btech2').style.display = 'block';
+      document.getElementById('mtech2').style.display = 'none';
+      document.getElementById('phd2').style.display = 'none'; 
+    }else if(current == "M Tech"){
+      document.getElementById('ten2').style.display = 'block';
+     document.getElementById('twelve2').style.display = 'block';
+      document.getElementById('btech2').style.display = 'block';
+      document.getElementById('mtech2').style.display = 'block';
+      document.getElementById('phd2').style.display = 'none'; 
+    }else{
+      document.getElementById('ten2').style.display = 'block';
+     document.getElementById('twelve2').style.display = 'block';
+      document.getElementById('btech2').style.display = 'block';
+      document.getElementById('mtech2').style.display = 'block';
+      document.getElementById('phd2').style.display = 'block'; 
+    }
   }
 }
 function validate(form) {
@@ -154,5 +187,4 @@ window.onload=function(){
   btn.checked=true;
   loginSignUp();
   setValues();
-  setValues2();
 };

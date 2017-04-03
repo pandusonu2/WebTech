@@ -25,7 +25,7 @@
 		<div class='fullScreen'>
 			<h1 class='center'>
 				<?php
-					$mysqli=new mysqli("localhost","root","pass","users");
+					$mysqli=new mysqli("localhost","root","","users");
 					$type=$_POST['key'];
 					if($type=="sl"){
 						$query="SELECT * FROM db where tors=0 and valid=1";
