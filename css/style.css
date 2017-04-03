@@ -53,6 +53,11 @@ p {
 }
 .inputbox{
 	font-size: 23px;
+                align-items: right;
+}
+.Labels{
+                font-stretch: semi-condensed;
+                align-items: left;
 }
 #napbar{
 	border:none;

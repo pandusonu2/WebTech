@@ -17,14 +17,8 @@
   </head>
   <body>
   	<h1>WELCOME <?php 
-          function activate($name){
-            $mysqli=new mysqli("localhost","root","pass","users");
-            $query = "UPDATE `db` SET `valid` = '1' WHERE `db`.`user` = '" + $name + "'";
-            $mysqli->query($query);
-            echo $query;
-          }
           $mysqli=new mysqli("localhost","root","pass","users");
-  		    echo $_GET['name'];
+          echo $_GET['name'];
           echo "</h1></br></br>";
           echo "<table>";
           echo "<tr><td><b>First Name</b></td> <td><b>Last Name</b></td> <td><b>Activate</b></td></tr>";
@@ -32,7 +26,8 @@
           if($re=$mysqli->query($query)){
             while($row=$re->fetch_row()){
               print "<tr><td>".$row[0]."</td><td>".$row[1]."</td><td>";
-              print "<input type=\"button\" value=\"activate\" onclick=\"activate(".$row[0].")\" />";
+              print "<a href=\"activate.php?admin='".$_GET['name']. "'&user='".$row[0]."\">Activate</a>";
+              //print "<input type=\"button\" value=\"activate\" onclick=\"activate(".$row[0].")\" />";
               print "</td></tr>";
             }
           }

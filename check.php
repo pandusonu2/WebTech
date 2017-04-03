@@ -27,6 +27,33 @@
 				<?php
 					$mysqli=new mysqli("localhost","root","","users");
 					$type=$_POST['key'];
+					/*$query="CREATE TABLE IF NOT EXISTS`db` (	`user` varchar(50),
+								            	`pass` varchar(50),
+									`fname` varchar(50),
+									`lname` varchar(50),
+									`gender` varchar(10),
+									`dept` varchar(5),
+									`roll` varchar(2),
+									`email` varchar(50),
+									`address` varchar(50),
+									`tenInsti` varchar(50),
+									`tenPer` varchar(3),
+									`tenYear` varchar(4),
+									`twelveInsti` varchar(50),
+									`twelvePer` varchar(3),
+									`twelveYear` varchar(4),
+									`btechInsti` varchar(50),
+									`btechPer` varchar(3),
+									`btechYear` varchar(4),
+									`mtechInsti` varchar(50),
+									`mtechPer` varchar(3),
+									`mtechYear` varchar(4),
+									`phdInsti` varchar(50),
+									`phdPer` varchar(3),
+									`phdYear` varchar(4),
+									`tors` varchar(1),
+									`valid` varchar(1),
+									primary key(user,tors));"*/
 					if($type=="sl"){
 						$query="SELECT * FROM db where tors=0 and valid=1";
 						if($re=$mysqli->query($query)){
@@ -48,7 +75,31 @@
 						$fname=$_POST['fname'];
 						$lname=$_POST['lname'];
 						$roll=$_POST['roll'];
-						$query="INSERT INTO `db` (`user`, `pass`, `fname`, `lname`, `roll`, `tors`, `valid`) VALUES ('$user', '$pass', '$fname', '$lname', '$roll', '0', '0');";
+						$gender=$_POST['gender'];
+						$dept=$_POST['dept'];
+						$roll=$_POST['roll'];
+						$email=$_POST['email'];
+						$address=$_POST['address'];
+						$tenInsti=$_POST['tenInsti'];
+						$tenPer=$_POST['tenPer'];
+						$tenYear=$_POST['tenYear'];
+						$twelveInsti=$_POST['twelveInsti'];
+						$twelvePer=$_POST['twelvePer'];
+						$twelveYear=$_POST['twelveYear'];
+						$btechInsti=$_POST['btechInsti'];
+						$btechPer=$_POST['btechPer'];
+						$btechYear=$_POST['btechYear'];
+						$mtechInsti=$_POST['mtechInsti'];
+						$mtechPer=$_POST['mtechPer'];
+						$mtechYear=$_POST['mtechYear'];
+						$query="INSERT INTO `db` (`user`, `pass`, `fname`, `lname`, `gender`,`dept`,`roll`,`email`,`address`,
+							`tenInsti`,`tenPer`,`tenYear`,`twelveInsti`,`twelvePer`,`twelveYear`,
+							`btechInsti`,`btechPer`,`btechYear`,`mtechInsti`,`mtechPer`,`mtechYear`,
+							`tors`,`valid`) 
+							VALUES('$user','$pass','$fname','$lname','$gender','$dept','$roll','$email','$address',
+								'$tenInsti','$tenPer','$tenYear','$twelveInsti','$twelvePer','$twelveYear',
+								'$btechInsti','$btechPer','$btechYear','$mtechInsti','$mtechPer','$mtechYear',
+								'0','0');";
 						if($re=$mysqli->query($query))
 							echo "Success";
 						else echo "Error";
@@ -72,7 +123,36 @@
 						}
 						$fname=$_POST['fname'];
 						$lname=$_POST['lname'];
-						$query="INSERT INTO `db` (`user`, `pass`, `fname`, `lname`, `tors`, `valid`) VALUES ('$user', '$pass', '$fname', '$lname', '1', '1');";
+						$roll=$_POST['roll'];
+						$gender=$_POST['gender'];
+						$dept=$_POST['dept'];
+						$roll=$_POST['roll'];
+						$email=$_POST['email'];
+						$address=$_POST['address'];
+						$tenInsti=$_POST['tenInsti'];
+						$tenPer=$_POST['tenPer'];
+						$tenYear=$_POST['tenYear'];
+						$twelveInsti=$_POST['twelveInsti'];
+						$twelvePer=$_POST['twelvePer'];
+						$twelveYear=$_POST['twelveYear'];
+						$btechInsti=$_POST['btechInsti'];
+						$btechPer=$_POST['btechPer'];
+						$btechYear=$_POST['btechYear'];
+						$mtechInsti=$_POST['mtechInsti'];
+						$mtechPer=$_POST['mtechPer'];
+						$mtechYear=$_POST['mtechYear'];
+						$phdInsti=$_POST['phdInsti'];
+						$phdPer=$_POST['phdPer'];
+						$phdYear=$_POST['phdYear'];
+						$query="INSERT INTO `db` (`user`, `pass`, `fname`, `lname`, `gender`,`dept`,`roll`,`email`,`address`,
+							`tenInsti`,`tenPer`,`tenYear`,`twelveInsti`,`twelvePer`,`twelveYear`,
+							`btechInsti`,`btechPer`,`btechYear`,`mtechInsti`,`mtechPer`,`mtechYear`,
+							`phdInsti`,`phdPer`,`phdInsti`,`tors`,`valid`) 
+							VALUES('$user','$pass','$fname','$lname','$gender','$dept','$roll','$email','$address',
+								'$tenInsti','$tenPer','$tenYear','$twelveInsti','$twelvePer','$twelveYear',
+								'$btechInsti','$btechPer','$btechYear','$mtechInsti','$mtechPer','$mtechYear',
+								'$phdInsti','$phdPer','$phdYear','0','0');";
+						echo $query;
 						if($re=$mysqli->query($query))
 							echo "Success";
 						else echo "Error";
