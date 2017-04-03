@@ -104,7 +104,7 @@
 							echo "Success";
 						else echo "Error";
 					}else if($type=="tl"){
-						$query="SELECT * FROM db where tors=1";
+						$query="SELECT * FROM db where tors=1 and valid=1";
 						if($re=$mysqli->query($query)){
 							while($row=$re->fetch_row()){
 								if($row[0]==$_POST['user'] && $row[1]==$_POST['pass']){
@@ -126,7 +126,6 @@
 						$roll=$_POST['roll'];
 						$gender=$_POST['gender'];
 						$dept=$_POST['dept'];
-						$roll=$_POST['roll'];
 						$email=$_POST['email'];
 						$address=$_POST['address'];
 						$tenInsti=$_POST['tenInsti'];
@@ -144,15 +143,14 @@
 						$phdInsti=$_POST['phdInsti'];
 						$phdPer=$_POST['phdPer'];
 						$phdYear=$_POST['phdYear'];
-						$query="INSERT INTO `db` (`user`, `pass`, `fname`, `lname`, `gender`,`dept`,`roll`,`email`,`address`,
+						$query="INSERT INTO `db` (`user`, `pass`, `fname`, `lname`, `gender`,`dept`,`email`,`address`,
 							`tenInsti`,`tenPer`,`tenYear`,`twelveInsti`,`twelvePer`,`twelveYear`,
 							`btechInsti`,`btechPer`,`btechYear`,`mtechInsti`,`mtechPer`,`mtechYear`,
-							`phdInsti`,`phdPer`,`phdInsti`,`tors`,`valid`) 
-							VALUES('$user','$pass','$fname','$lname','$gender','$dept','$roll','$email','$address',
+							`phdInsti`,`phdPer`,`phdYear`,`tors`,`valid`) 
+							VALUES('$user','$pass','$fname','$lname','$gender','$dept','$email','$address',
 								'$tenInsti','$tenPer','$tenYear','$twelveInsti','$twelvePer','$twelveYear',
 								'$btechInsti','$btechPer','$btechYear','$mtechInsti','$mtechPer','$mtechYear',
-								'$phdInsti','$phdPer','$phdYear','0','0');";
-						echo $query;
+								'$phdInsti','$phdPer','$phdYear','1','0');";
 						if($re=$mysqli->query($query))
 							echo "Success";
 						else echo "Error";
