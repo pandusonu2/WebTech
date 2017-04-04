@@ -22,8 +22,6 @@
           <li><a href="index.html">Home</a></li>
           <li><a onclick="javascript:studentT();">Student</a></li>
           <li><a onclick="javascript:studentT();" >Teacher</a></li>
-          <li><a href="contactus,html">Contact Us</a></li>
-          <li><a href="about.asp">About</a></li>
         </ul>
           <!--<td><a href="index.html"><input type="button" value="HOME"/></a></td>
           <td><input type="button" onclick="javascript:studentT();" value="Student"/></td>
@@ -34,97 +32,109 @@
   </tr>
   </table>
   <div id="student" class="boxx">
-    <h2 align="center">Log in to your account (Student)</h2>
-    <center>
-      <input type="radio" onclick="javascript:loginSignUp();" name="yesno" id="loginCheck" checked="true" />Login
+  <table id="form">
+  <tr><td><h2 align="center">Log in to your account (Student)</h2></td></tr>
+    <tr><td><center>
+      <input type="radio" onclick="javascript:loginSignUp();" name="yesno" id="loginCheck" checked="checked" />Login
       <input type="radio" onclick="javascript:loginSignUp();" name="yesno" id="signupCheck"/>SignUp
     </center>
-    <br>
+    <br></td></tr></table>
     <div id="login" align="center" >
       <form action="check.php" method="POST">
-          <label class="Labels">Username:</label>
-          <input class="inputbox" type="text" name="user" id="unameL" required="" placeholder="Username" /><br/><br/>
-          <label class="Labels">Password:</label>
-          <input class="inputbox" type="password" name="pass" id="passL" required="" placeholder="Password" /><br/><br/>
-          <input type="text" name="key" value="sl" style="display: none" />
-          <input type="submit" id="btn" value="LogIn" />
+          <table id="form">
+          <tr><td><label class="Labels">Username:</label></td>
+          <td><input class="inputbox" type="text" name="user" id="unameL" required="" placeholder="Username" /><br/><br/></td></tr>
+          <tr><td><label class="Labels">Password:</label></td>
+          <td><input class="inputbox" type="password" name="pass" id="passL" required="" placeholder="Password" /><br/><br/></td></tr>
+          <tr><td colspan="2"><input type="text" name="key" value="sl" style="display: none" />
+          <input type="submit" id="btn" value="LogIn"  /></td></tr>
+          </table>
       </form>
     </div>
     <div id="signup" align="center">
       <form action="check.php" method="POST" onsubmit="return validate(this)">
-          <label class="Labels">Username:</label>
-          <input class="inputbox" type="text" name="user" id="uname" value=""  placeholder="Username"><br/>
-          <span id="unameError" style="color:red; display:none">This should have only alphabets</span><br/>
-          <label class="Labels">First Name:</label>
-          <input class="inputbox" type="text" name="fname" id="fname" value="" placeholder="First Name"><br/>
-          <span id="fnameError" style="color:red; display:none">This should have only alphabets</span><br/>
-          <label class="Labels">Last Name:</label>
-          <input class="inputbox" type="text" name="lname" id="lname" value="" placeholder="Last Name"><br/>
-          <span id="lnameError" style="color:red; display:none">This should have only alphabets</span><br/>
-          <label class="Labels">Gender:</label>
+      <table id="form">
+          <tr><td><label class="Labels">Username:</label></td>
+          <td><input class="inputbox" type="text" name="user" id="uname" value=""  placeholder="Username"><br/>
+          <span id="unameError" style="color:red; display:none">This should have only alphabets</span><br/></td></tr>
+          <tr><td><label class="Labels">First Name:</label></td>
+          <td><input class="inputbox" type="text" name="fname" id="fname" value="" placeholder="First Name"><br/>
+          <span id="fnameError" style="color:red; display:none">This should have only alphabets</span><br/></td></tr>
+          <tr><td><label class="Labels">Last Name:</label></td>
+          <td><input class="inputbox" type="text" name="lname" id="lname" value="" placeholder="Last Name"><br/>
+          <span id="lnameError" style="color:red; display:none">This should have only alphabets</span><br/></td></tr>
+          <tr><td colspan="2"><label class="Labels">Gender:</label>
           <input type="radio" name="gender" id="gender" value="Male" required="">Male&nbsp;
-          <input type="radio" name="gender" id="gender" value="Female" required="">Female<br/><br/>
-          <label class="Labels">Date Of Birth:</label> <input type="date"><br/><br/>
-          <label class="Labels">Department</label>
-          <select name="dept" id="dept" required=""></select><br/><br/>
-          <label class="Labels">Roll No:</label>
-          <input class="inputbox" type="text" name="roll" id="roll" value="" placeholder="Roll No"><br/>
-          <span id="rollError" style="color:red; display:none">This should be two digit number</span><br/>
-          <label class="Labels">Email ID:</label>
-          <input class="inputbox" type="text" name="email" id="email" value="" placeholder="Email"><br/>
-          <span id="emailError" style="color:red; display:none">This should be of the format xyz@email.com</span><br/>
-          <label class="Labels">Phone number:</label>
-          <input class="inputbox" type="text" name="phone" id="phone" value="" placeholder="Phone"><br/>
-          <span id="phoneError" style="color:red; display:none">This should be nine digit number</span><br/>
-          <label class="Labels">Password:</label>
-          <input class="inputbox" type="password" name="pass" id="pass" placeholder="Password" />
-          <span id="passError" style="color:red; display:none">Error Here</span><br/><br/>
-          <label class="Labels">Re Enter Password:</label>
-          <input class="inputbox" type="password" name="rpass" id="repass" placeholder="Re-enter password" /><br/>
-          <span id="repassError" style="color:red; display:none">Error Here</span><br/>
-          <label class="Labels">Address:</label>
-          <textarea class="inputbox" name="address" id="address" value="" required="" placeholder="Address"></textarea><br/>
-          <span id="addressError" style="color:red; display:none">This should not be blank</span><br/>
-          <input type="text" name="key" value="ss" style="display: none" />
-          <label>Education qualifications</label><br/>
+          <input type="radio" name="gender" id="gender" value="Female" required="">Female<br/><br/></td></tr>
+          <tr><td colspan="2"><label class="Labels">Date Of Birth:</label><input type="date"><br/><br/></td></tr>
+          <tr><td colspan="2"><label class="Labels">Department</label>
+          <select name="dept" id="dept" required=""></select><br/><br/></td></tr>
+          <tr><td><label class="Labels">Roll No:</label></td>
+          <td><input class="inputbox" type="text" name="roll" id="roll" value="" placeholder="Roll No"><br/>
+          <span id="rollError" style="color:red; display:none">This should be two digit number</span><br/></td></tr>
+          <tr><td><label class="Labels">Email ID:</label></td>
+          <td><input class="inputbox" type="text" name="email" id="email" value="" placeholder="Email"><br/>
+          <span id="emailError" style="color:red; display:none">This should be of the format xyz@email.com</span><br/></td></tr>
+          <tr><td><label class="Labels">Phone number:</label></td>
+          <td><input class="inputbox" type="text" name="phone" id="phone" value="" placeholder="Phone"><br/>
+          <span id="phoneError" style="color:red; display:none">This should be nine digit number</span><br/></td></tr>
+          <tr><td><label class="Labels">Password:</label></td>
+          <td><input class="inputbox" type="password" name="pass" id="pass" placeholder="Password" />
+          <span id="passError" style="color:red; display:none">Error Here</span><br/><br/></td></tr>
+          <tr><td><label class="Labels">Re Enter Password:</label></td>
+          <td><input class="inputbox" type="password" name="rpass" id="repass" placeholder="Re-enter password" /><br/>
+          <span id="repassError" style="color:red; display:none">Error Here</span><br/></td></tr>
+          <tr><td><label class="Labels">Address:</label></td>
+          <td><textarea class="inputbox" name="address" id="address" value="" required="" placeholder="Address"></textarea><br/>
+          <span id="addressError" style="color:red; display:none">This should not be blank</span><br/></td></tr>
+          <tr><td colspan="2"><input type="text" name="key" value="ss" style="display: none" />
+          <label><h2>Education qualifications</h2></label><br/></td></tr></table>
           <div>
             <label>Highest level of Education:</label>
             <select id="lvlEdu" onchange="displayer(1)"></select><br/><br/>
             <div id="ten">
-              <label>10th Class</label><br/>
-              <label>Institute:</label>
-              <input class="inputbox" name="tenInsti" type="text" id="tenInstitute"><br/>
-              <label>Percentage:</label>
-              <input class="inputbox" name="tenPer" type="text" id="tenPer"><br/>
-              <label>Year of Passing:</label>
-              <input class="inputbox" name="tenYear" type="text" id="tenYear"><br/>
+            <table id="form">
+              <tr><th colspan="2"><label>10th Class</label><br/></th></tr>
+              <tr><td><label>Institute:</label></td>
+              <td><input class="inputbox" name="tenInsti" type="text" id="tenInstitute"><br/></td></tr>
+              <tr><td><label>Percentage:</label></td>
+              <td><input class="inputbox" name="tenPer" type="text" id="tenPer"><br/></td></tr>
+              <tr><td><label>Year of Passing:</label></td>
+              <td><input class="inputbox" name="tenYear" type="text" id="tenYear"><br/></td></tr>
+            </table>
             </div>
             <div id="twelve">
-              <label>12th Class</label><br/>
-              <label>Institute:</label>
-              <input class="inputbox" name="twelveInsti" type="text" id="twelveInstitute"><br/>
-              <label>Percentage:</label>
-              <input class="inputbox" name="twelvePer" type="text" id="twelvePer"><br/>
-              <label>Year of Passing:</label>
-              <input class="inputbox" name="twelveYear" type="text" id="twelveYear"><br/>
+            <table id="form">
+             <tr><th colspan="2"><label>12th Class</label><br/></th></tr>
+              <tr><td><label>Institute:</label></td>
+              <td><input class="inputbox" name="twelveInsti" type="text" id="twelveInstitute"><br/></td></tr>
+              <tr><td><label>Percentage:</label></td>
+              <td><input class="inputbox" name="twelvePer" type="text" id="twelvePer"><br/></td></tr>
+              <tr><td><label>Year of Passing:</label></td>
+              <td><input class="inputbox" name="twelveYear" type="text" id="twelveYear"><br/></td></tr>
+            </table>
             </div>
             <div id="btech">
-              <label>B Tech</label><br/>
-              <label>Institute:</label>
-              <input class="inputbox" name="btechInsti" type="text" id="btechInstitute"><br/>
-              <label>Percentage:</label>
-              <input class="inputbox" name="btechPer" type="text" id="btechPer"><br/>
-              <label>Year of Passing:</label>
-              <input class="inputbox" name="btechYear" type="text" id="btechYear"><br/>
+            <table id="form">
+              <tr><th colspan="2"><label>B Tech</label><br/></th></tr>
+              <tr><td><label>Institute:</label></td>
+              <td><input class="inputbox" name="btechInsti" type="text" id="btechInstitute"><br/></td></tr>
+              <tr><td><label>Percentage:</label></td>
+              <td><input class="inputbox" name="btechPer" type="text" id="btechPer"><br/></td></tr>
+              <tr><td><label>Year of Passing:</label></td>
+              <td><input class="inputbox" name="btechYear" type="text" id="btechYear"><br/></td></tr>
+              </table>
             </div>
             <div id="mtech">
-              <label>M Tech</label><br/>
-              <label>Institute:</label>
-              <input class="inputbox" name="mtechInsti" type="text" id="mtechInstitute"><br/>
-              <label>Percentage:</label>
-              <input class="inputbox" name="mtechPer" type="text" id="mtechPer"><br/>
-              <label>Year of Passing:</label>
-              <input class="inputbox" name="mtechYear" type="text" id="mtechYear"><br/>
+            <table id="form">
+              <tr><th colspan="2"><label>M Tech</label><br/></th></tr>
+              <tr><td><label>Institute:</label></td>
+              <td><input class="inputbox" name="mtechInsti" type="text" id="mtechInstitute"><br/></td></tr>
+              <tr><td><label>Percentage:</label></td>
+              <td><input class="inputbox" name="mtechPer" type="text" id="mtechPer"><br/></td></tr>
+              <tr><td><label>Year of Passing:</label></td>
+              <td><input class="inputbox" name="mtechYear" type="text" id="mtechYear"><br/></td></tr>
+              </table>
             </div>
           </div>
           <input type="submit" id="btn" value="SignUp" />
@@ -135,7 +145,7 @@
   <div id="teacher" class="boxx" style="display: none">
     <h2 align="center">Welcome Teacher! Log in to your account (Teacher)</h2>
     <center>
-      <input type="radio" onclick="javascript:loginSignUp2();" name="yesno" id="loginCheck2" checked="true" />Login
+      <input type="radio" onclick="javascript:loginSignUp2();" name="yesno" id="loginCheck2" checked="checked"/>Login
       <input type="radio" onclick="javascript:loginSignUp2();" name="yesno" id="signupCheck2"/>SignUp
     </center>
     <br>
@@ -151,85 +161,96 @@
     </div>
     <div id="signup2" align="center" style="display: none">
       <form action="check.php" method="POST" onsubmit="return validate(this)">
-          <label class="Labels">Username:</label>
-          <input class="inputbox" type="text" name="user" id="uname2" value=""  placeholder="Username"><br/>
-          <span id="uname2Error" style="color:red; display:none">This should have only alphabets</span><br/>
-          <label class="Labels">First name:</label>
-          <input class="inputbox" type="text" name="fname" id="fname2" value="" placeholder="First Name"><br/>
-          <span id="fname2Error" style="color:red; display:none">This should have only alphabets</span><br/>
-          <label class="Labels">Last name:</label>
-          <input class="inputbox" type="text" name="lname" id="lname2" value="" placeholder="Last Name"><br/>
-          <span id="lname2Error" style="color:red; display:none">This should have only alphabets</span><br/>
-          <label class="Labels">Gender:</label>
+      <table id="form">
+          <tr><td><label class="Labels">Username:</label></td>
+          <td><input class="inputbox" type="text" name="user" id="uname2" value=""  placeholder="Username"><br/>
+          <span id="uname2Error" style="color:red; display:none">This should have only alphabets</span><br/></td></tr>
+           <tr><td><label class="Labels">First name:</label></td>
+          <td><input class="inputbox" type="text" name="fname" id="fname2" value="" placeholder="First Name"><br/>
+          <span id="fname2Error" style="color:red; display:none">This should have only alphabets</span><br/></td></tr>
+           <tr><td><label class="Labels">Last name:</label></td>
+          <td><input class="inputbox" type="text" name="lname" id="lname2" value="" placeholder="Last Name"><br/>
+          <span id="lname2Error" style="color:red; display:none">This should have only alphabets</span><br/></td></tr>
+           <tr><td colspan="2"><label class="Labels">Gender:</label>
           <input type="radio" name="gender" id="gender" value="Male" required="">Male&nbsp;
-          <input type="radio" name="gender" id="gender" value="Female" required="">Female<br/><br/>
-          <label class="Labels">Date of Birth:</label> <input type="date" required=""><br/><br/>
-          <label class="Labels">Department</label>
-          <select name="dept" id="dept2" required=""></select><br/><br/>
-          <label class="Labels">Email ID:</label>
-          <input class="inputbox" type="text" name="email" id="email2" value="" placeholder="Email"><br/>
-          <span id="email2Error" style="color:red; display:none">This should be of the format xyz@email.com</span><br/>
-          <label class="Labels">Phone:</label>
-          <input class="inputbox" type="text" name="phone" id="phone2" value="" placeholder="Phone"><br/>
-          <span id="phone2Error" style="color:red; display:none">This should be nine digit number</span><br/>
-          <label class="Labels">Password:</label>
-          <input class="inputbox" type="password" name="pass" id="pass2" placeholder="Password" />
-          <span id="pass2Error" style="color:red; display:none">Error Here</span><br/><br/>
-          <label class="Labels">Re type Password:</label>
-          <input class="inputbox" type="password" name="rpass" id="repass2" placeholder="Re-enter password" /><br/>
-          <span id="repass2Error" style="color:red; display:none">Error Here</span><br/>
-          <label class="Labels">Address:</label>
-          <textarea class="inputbox" name="address" id="address2" value="" required="" placeholder="Address"></textarea><br/>
-          <span id="address2Error" style="color:red; display:none">This should not be blank</span><br/>
-          <input type="text" name="key" value="ts" style="display: none" />
-          <label>Education qualifications</label><br/>
+          <input type="radio" name="gender" id="gender" value="Female" required="">Female<br/><br/></td></tr>
+          <tr><td colspan="2"><label class="Labels">Date of Birth:</label> <input type="date" required=""><br/><br/></td></tr>
+          <tr><td colspan="2"><label class="Labels">Department</label>
+          <select name="dept" id="dept2" required=""></select><br/><br/></td></tr>
+          <tr><td><label class="Labels">Email ID:</label></td>
+          <td><input class="inputbox" type="text" name="email" id="email2" value="" placeholder="Email"><br/>
+          <span id="email2Error" style="color:red; display:none">This should be of the format xyz@email.com</span><br/></td></tr>
+          <tr><td><label class="Labels">Phone:</label></td>
+          <td><input class="inputbox" type="text" name="phone" id="phone2" value="" placeholder="Phone"><br/>
+          <span id="phone2Error" style="color:red; display:none">This should be nine digit number</span><br/></td></tr>
+          <tr><td><label class="Labels">Password:</label></td>
+          <td><input class="inputbox" type="password" name="pass" id="pass2" placeholder="Password" />
+          <span id="pass2Error" style="color:red; display:none">Error Here</span><br/><br/></td></tr>
+          <tr><td><label class="Labels">Re type Password:</label></td>
+          <td><input class="inputbox" type="password" name="rpass" id="repass2" placeholder="Re-enter password" /><br/>
+          <span id="repass2Error" style="color:red; display:none">Error Here</span><br/></td></tr>
+          <tr><td><label class="Labels">Address:</label></td>
+          <td><textarea class="inputbox" name="address" id="address2" value="" required="" placeholder="Address"></textarea><br/>
+          <span id="address2Error" style="color:red; display:none">This should not be blank</span><br/></td></tr>
+          <input type="text" name="key" value="ts" style="display: none" /></td></tr>
+          <tr><td colspan="2"><label><h2>Education qualifications</h2></label><br/></td></tr>
+          </table>
           <div>
             <label>Highest level of Education:</label>
             <select id="lvlEdu2" onchange="displayer(2)"></select><br/><br/>
             <div id="ten2">
-              <label>10th Class</label><br/>
-              <label>Institute:</label>
-              <input class="inputbox" name="tenInsti" type="text" id="tenInstitute"><br/>
-              <label>Percentage:</label>
-              <input class="inputbox" name="tenPer" type="text" id="tenPer"><br/>
-              <label>Year of Passing:</label>
-              <input class="inputbox" name="tenYear" type="text" id="tenYear"><br/>
+              <table id="form">
+              <tr><th colspan="2"><label>10th Class</label><br/></th></tr>
+              <tr><td><label>Institute:</label></td>
+              <td><input class="inputbox" name="tenInsti" type="text" id="tenInstitute"><br/></td></tr>
+              <tr><td><label>Percentage:</label></td>
+              <td><input class="inputbox" name="tenPer" type="text" id="tenPer"><br/></td></tr>
+              <tr><td><label>Year of Passing:</label></td>
+              <td><input class="inputbox" name="tenYear" type="text" id="tenYear"><br/></td></tr>
+              </table>
             </div>
             <div id="twelve2">
-              <label>12th Class</label><br/>
-              <label>Institute:</label>
-              <input class="inputbox" name="twelveInsti" type="text" id="twelveInstitute"><br/>
-              <label>Percentage:</label>
-              <input class="inputbox" name="twelvePer" type="text" id="twelvePer"><br/>
-              <label>Year of Passing:</label>
-              <input class="inputbox" name="twelveYear" type="text" id="twelveYear"><br/>
+            <table id="form">
+              <tr><th colspan="2"><label>12th Class</label><br/></th></tr>
+              <tr><td><label>Institute:</label></td>
+              <td><input class="inputbox" name="twelveInsti" type="text" id="twelveInstitute"><br/></td></tr>
+              <tr><td><label>Percentage:</label></td>
+              <td><input class="inputbox" name="twelvePer" type="text" id="twelvePer"><br/></td></tr>
+              <tr><td><label>Year of Passing:</label></td>
+              <td><input class="inputbox" name="twelveYear" type="text" id="twelveYear"><br/></td></tr>
+              </table>
             </div>
             <div id="btech2">
-              <label>B Tech</label><br/>
-              <label>Institute:</label>
-              <input class="inputbox" name="btechInsti" type="text" id="btechInstitute"><br/>
-              <label>Percentage:</label>
-              <input class="inputbox" name="btechPer" type="text" id="btechPer"><br/>
-              <label>Year of Passing:</label>
-              <input class="inputbox" name="btechYear" type="text" id="btechYear"><br/>
+            <table id="form">
+              <tr><th colspan="2"><label>B Tech</label><br/></th></tr>
+              <tr><td><label>Institute:</label></td>
+              <td><input class="inputbox" name="btechInsti" type="text" id="btechInstitute"><br/></td></tr>
+              <tr><td><label>Percentage:</label></td>
+              <td><input class="inputbox" name="btechPer" type="text" id="btechPer"><br/></td></tr>
+              <tr><td><label>Year of Passing:</label></td>
+              <td><input class="inputbox" name="btechYear" type="text" id="btechYear"><br/></td></tr>
+              </table>
             </div>
             <div id="mtech2">
-              <label>M Tech</label><br/>
-              <label>Institute:</label>
-              <input class="inputbox" name="mtechInsti" type="text" id="mtechInstitute"><br/>
-              <label>Percentage:</label>
-              <input class="inputbox" name="mtechPer" type="text" id="mtechPer"><br/>
-              <label>Year of Passing:</label>
-              <input class="inputbox" name="mtechYear" type="text" id="mtechYear"><br/>
+            <table id="form">
+              <tr><th colspan="2"><label>M Tech</label><br/></th></tr>
+              <tr><td><label>Institute:</label></td>
+              <td><input class="inputbox" name="mtechInsti" type="text" id="mtechInstitute"><br/></td></tr>
+              <tr><td><label>Percentage:</label></td>
+              <td><input class="inputbox" name="mtechPer" type="text" id="mtechPer"><br/></td></tr>
+              <tr><td><label>Year of Passing:</label></td>
+              <td><input class="inputbox" name="mtechYear" type="text" id="mtechYear"><br/></td></tr>
+              </table>
             </div>
             <div id="phd2">
-              <label>PhD</label><br/>
-              <label>Institute:</label>
-              <input class="inputbox" name="phdInsti" type="text" id="phdInstitute"><br/>
-              <label>Percentage:</label>
-              <input class="inputbox" name="phdPer" type="text" id="phdPer"><br/>
-              <label>Year of Passing:</label>
-              <input class="inputbox" name="phdYear" type="text" id="phdYear"><br/>
+            <table id="form">
+              <tr><th colspan="2"><label>PhD</label><br/></th></tr>
+              <tr><td><label>Institute:</label></td>
+              <td><input class="inputbox" name="phdInsti" type="text" id="phdInstitute"><br/></td></tr>
+              <tr><td><label>Percentage:</label></td>
+              <td><input class="inputbox" name="phdPer" type="text" id="phdPer"><br/></td></tr>
+              <tr><td><label>Year of Passing:</label></td>
+              <td><input class="inputbox" name="phdYear" type="text" id="phdYear"><br/></td></tr></table>
             </div>
           </div>
           <input type="submit" id="btn" value="SignUp" />
