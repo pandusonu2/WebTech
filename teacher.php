@@ -22,7 +22,7 @@
           echo "</h1></br></br>";
           echo "<table>";
           echo "<tr><td><b>First Name</b></td> <td><b>Last Name</b></td> <td><b>Activate</b></td></tr>";
-          $query="SELECT * FROM db WHERE tors='0 'and valid='0';";
+          $query="SELECT * FROM db WHERE tors='0' and valid='0';";
           if($re=$mysqli->query($query)){
             while($row=$re->fetch_row()){
               print "<tr><td>".$row[0]."</td><td>".$row[1]."</td><td>";
