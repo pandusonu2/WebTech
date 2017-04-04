@@ -132,9 +132,11 @@ function validate(form) {
       var val=ele[i].value;
       var chk=true;
       if(val===""){
-        document.getElementById(ele[i].id+"Error").textContent="This should not be blank";
-        chk=false;
-        chk2=false;
+        try{
+          document.getElementById(ele[i].id+"Error").textContent="This should not be blank";
+          chk=false;
+          chk2=false;
+        }catch(err){}
         //continue;
       }
       if(ele[i].type === 'text'){
@@ -180,6 +182,7 @@ function validate(form) {
       chk2=chk&&chk2;
       }catch(err){}
     }
+  console.log(chk2);
   return chk2;
 }
 window.onload=function(){
