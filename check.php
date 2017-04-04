@@ -23,6 +23,7 @@
 	</style>
 	<body>
 		<div class='fullScreen'>
+			<a href="login.html">Back to Home</a>
 			<h1 class='center'>
 				<?php
 					$mysqli=new mysqli("localhost","root","","users");
