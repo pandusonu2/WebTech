@@ -131,6 +131,9 @@ function validate(form) {
       console.log(ele[i].id+" "+ele[i].value+" "+ele[i].type);  
       var val=ele[i].value;
       var chk=true;
+      try{
+        document.getElementById(ele[i].id+"Error").style.display='none';
+      }catch(err){}
       if(val===""){
         try{
           document.getElementById(ele[i].id+"Error").textContent="This should not be blank";
@@ -163,10 +166,10 @@ function validate(form) {
         }else{
           if(!nameRegex.test(val)){
             try{
-            }catch(err){
-            document.getElementById(ele[i].id+"Error").textContent="This should only have small and captital alphabets";
-            console.log(ele[i].id+"Error");}
-            chk=false;
+              document.getElementById(ele[i].id+"Error").textContent="This should only have small and captital alphabets";
+              //console.log(ele[i].id+"Error");
+              chk=false;
+            }catch(err){}
           }
         }
       }else{
